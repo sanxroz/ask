@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-import requests
+import openai
 
 app = Flask(__name__, template_folder='templates')
 
@@ -11,19 +11,12 @@ def index():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    url = 'https://bing.khanh.lol/completion'
-    headers = {'Content-Type': 'application/json'}
-    data = {'prompt': request.json['inputValue'], 'includeDetails': True}
 
-    try:
-        response = requests.post(url, headers=headers, json=data)
-        response.raise_for_status()
+    open_ai_cookie = request.cookies.get("not-api-cookie")
 
-        result = response.json()['details']['spokenText'].strip()
-        return jsonify({'message': result})
-    except requests.exceptions.RequestException as err:
-        print('Something went wrong:', err)
-        return jsonify({'message': 'Something went wrong'}), 500
+    openai.api_key = f"{open_ai_cookie}"
+    completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": f"{request.json['inputValue']}"}])
+    return jsonify({'message': completion.choices[0].message.content})
 
 
 if __name__ == '__main__':
