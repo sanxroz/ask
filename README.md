@@ -4,6 +4,10 @@ Your own AI assistant with all the power of ChatGPT, based on Flask, HTML, Javas
 
 Build your own AI now!!
 
+Check the [demo](https://twitter.com/SanxRoz/status/1635059072457392128)
+
+![Just Ask Me](./api/static/Just Ask ME.png)
+
 ## Demo
 
 https://flask-python-template.vercel.app/
