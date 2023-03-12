@@ -6,7 +6,7 @@ Build your own AI now!!
 
 Check the [demo](https://twitter.com/SanxRoz/status/1635059072457392128)
 
-![Just Ask Me](./api/static/Just Ask ME.png)
+![Just Ask Me](./api/static/justaskme.png)
 
 ## Demo
 
