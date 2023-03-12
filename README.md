@@ -8,13 +8,15 @@ Check the [demo](https://twitter.com/SanxRoz/status/1635059072457392128)
 
 ![Just Ask Me](./api/static/justaskme.png)
 
-## Demo
-
-https://flask-python-template.vercel.app/
-
 ## How it Works
 
-This example uses the Web Server Gateway Interface (WSGI) with Flask to enable handling requests on Vercel with Serverless Functions.
+Just ask me provides a simple, minimal and fully functional chat that you can use to build your own AI app powered by OpenAI.
+
+Just plug and play, it has everything you need to start deploying.
+
+To change the interface go to `api/templates/home.html`.
+
+To modify your prompt or API go to `api/index.py`.
 
 ## Running Locally
 
